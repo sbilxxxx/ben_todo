@@ -12,11 +12,24 @@
     "@nuxtjs/axios": "^5.13.6",
     "bootstrap": "^4.6.0",
     "bootstrap-vue": "^2.21.2",
-    "core-js": "^3.15.1",
+    "core-js": "3.17.2",
+    "firebase": "9.0.1",
     "nuxt": "^2.15.7"
   },
   "devDependencies": {
     "eslint-config-prettier": "^8.3.0",
     "prettier": "^2.3.2"
-  }
+  },
+  "description": "## Build Setup",
+  "main": "nuxt.config.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sbilxxxx/ben_todo.git"
+  },
+  "author": "benjamin",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sbilxxxx/ben_todo/issues"
+  },
+  "homepage": "https://github.com/sbilxxxx/ben_todo#readme"
 }
