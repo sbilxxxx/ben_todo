@@ -15,6 +15,20 @@
           "additionalAuthenticationProviders": []
         }
       }
+    },
+    "api5318a83d": {
+      "service": "API Gateway",
+      "providerPlugin": "awscloudformation",
+      "dependsOn": [
+        {
+          "category": "function",
+          "resourceName": "bentodo56ec4dda",
+          "attributes": [
+            "Name",
+            "Arn"
+          ]
+        }
+      ]
     }
   },
   "auth": {
@@ -39,6 +53,13 @@
           "SMS"
         ]
       }
+    }
+  },
+  "function": {
+    "bentodo56ec4dda": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
     }
   }
 }

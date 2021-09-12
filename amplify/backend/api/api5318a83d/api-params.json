@@ -1,0 +1,58 @@
+{
+    "paths": [
+        {
+            "name": "/items",
+            "lambdaFunction": "bentodo56ec4dda",
+            "privacy": {
+                "private": true,
+                "auth": [
+                    "/POST",
+                    "/GET",
+                    "/PUT",
+                    "/PATCH",
+                    "/DELETE"
+                ]
+            },
+            "policyResourceName": "/items"
+        },
+        {
+            "name": "/items",
+            "lambdaFunction": "bentodo56ec4dda",
+            "privacy": {
+                "private": true,
+                "auth": [
+                    "/POST",
+                    "/GET",
+                    "/PUT",
+                    "/PATCH",
+                    "/DELETE"
+                ]
+            },
+            "policyResourceName": "/items"
+        }
+    ],
+    "resourceName": "api5318a83d",
+    "apiName": "api5318a83d",
+    "functionArns": [
+        {
+            "lambdaFunction": "bentodo56ec4dda"
+        }
+    ],
+    "privacy": {
+        "auth": 2,
+        "unauth": 0,
+        "authRoleName": "amplify-bentodo-dev-130827-authRole",
+        "unAuthRoleName": "amplify-bentodo-dev-130827-unauthRole"
+    },
+    "dependsOn": [
+        {
+            "category": "function",
+            "resourceName": "bentodo56ec4dda",
+            "attributes": [
+                "Name",
+                "Arn"
+            ]
+        }
+    ],
+    "uuid": "68e54a94"
+}
