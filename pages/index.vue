@@ -1,68 +1,48 @@
 <template>
-  <amplify-authenticator>
+  <div>
     <h1>Hello Benjamin</h1>
     <p>this is a todo app</p>
     <div class="addArea">
-      <input type="text" v-model="name">
-      <input type="text" v-model="discription">
-      <button class="addButton" @click="createTodo">追加</button>
+      <input type="text" v-model="inputStr">
+      <button class="addButton" @click="doAdd">追加</button>
       <div>番号 タスク</div>
       <ul>
-        <li v-for="todo in todos" v-bind:key="todo.id">
-          {{todo.name}} ：{{todo.discription}}
-          <!-- <input type="checkbox" v-model="item.state" /> -->
-          <!-- <button @click="doRemove(index)">タスクを消去</button> -->
+        <li v-for="(item, index) in list" v-bind:key="item.id">
+          {{item.id}} {{item.todo}}
+          <input type="checkbox" v-model="item.state" />
+          <button @click="doRemove(index)">タスクを消去</button>
         </li>
       </ul>
     </div>
-    <amplify-sign-out></amplify-sign-out>
-  </amplify-authenticator>
+  </div>
 </template>
 
 <script>
-import { API } from 'aws-amplify'
-import { createTodo } from '~/src/graphql/mutations'
-import { listTodos } from '~/src/graphql/queries'
-export default {
-  data() {
-    return {
-      name :'',
-      discription: 'タスクを入力してください',
-      // タスクインスタンス(stateは完了・未完了をboolで表現)
-      todos: [],
+  export default {
+    data() {
+      return {
+        inputStr: 'タスクを入力してください',
+        // タスクインスタンス(stateは完了・未完了をboolで表現)
+        list: [
+          {id: 1, todo: "掃除", state: false},
+          {id: 2, todo: "洗濯", state: true},
+          {id: 3, todo: "炊飯", state: false},
+        ]
+      }
+    },
+    methods: {
+      doAdd: function() {
+        var max = this.list.reduce(function (a, b) {
+          return a > b.id ? a : b.id
+        }, 0);
+        this.list.push({
+          "id": max + 1,
+          "todo": this.inputStr,
+        })
+      },
+      doRemove: function(index) {
+        this.list.splice(index, 1)
+      }
     }
-  },
-  async created() {
-    await this.getTodos()
-  },
-  methods: {
-    async createTodo() {
-      const { name, description } = this
-      if (!name || !description) return false
-      const todo = { name, description }
-      await API.graphql({
-        query: createTodo,
-        variables: { input: todo },
-      })
-      this.name = ''
-      this.description = ''
-      console.log("created todo");
-    },
-    async getTodos() {
-      const todos = await API.graphql({
-        query: listTodos,
-      })
-      this.todos = todos.data.listTodos.items
-    },
-    subscribe() {
-      API.graphql({ query: onCreateTodo }).subscribe({
-        next: (eventData) => {
-          const todo = eventData.value.data.onCreateTodo
-          if (this.todos.some((item) => item.name === todo.name)) return // remove duplications
-          this.todos = [...this.todos, todo]
-        },
-      })
-    },
-  }
-};
+  };
 </script>
