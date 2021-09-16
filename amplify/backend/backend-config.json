@@ -1,36 +1,5 @@
 {
-  "api": {
-    "bentodo": {
-      "service": "AppSync",
-      "providerPlugin": "awscloudformation",
-      "output": {
-        "authConfig": {
-          "defaultAuthentication": {
-            "authenticationType": "API_KEY",
-            "apiKeyConfig": {
-              "apiKeyExpirationDays": 7,
-              "description": "todo"
-            }
-          },
-          "additionalAuthenticationProviders": []
-        }
-      }
-    },
-    "api5318a83d": {
-      "service": "API Gateway",
-      "providerPlugin": "awscloudformation",
-      "dependsOn": [
-        {
-          "category": "function",
-          "resourceName": "bentodo56ec4dda",
-          "attributes": [
-            "Name",
-            "Arn"
-          ]
-        }
-      ]
-    }
-  },
+  "api": {},
   "auth": {
     "bentodo4e41db73": {
       "service": "Cognito",
@@ -55,11 +24,5 @@
       }
     }
   },
-  "function": {
-    "bentodo56ec4dda": {
-      "build": true,
-      "providerPlugin": "awscloudformation",
-      "service": "Lambda"
-    }
-  }
+  "function": {}
 }
