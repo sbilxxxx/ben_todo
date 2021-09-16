@@ -1,6 +1,6 @@
 <!-- Please remove this file from your project -->
 <template>
-  <div>
+  <div class="mainContainer">
     <Header />
     <Nuxt />
     <Footer />

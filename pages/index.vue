@@ -1,7 +1,6 @@
 <template>
-  <div>
-    <h1>Hello Benjamin</h1>
-    <p>this is a todo app</p>
+  <div class="bodyContainer">
+    <img src="image/profile_image.jpg" class="profileImg">
     <div class="addArea">
       <input type="text" v-model="inputStr">
       <button class="addButton" @click="doAdd">追加</button>
@@ -46,3 +45,15 @@
     }
   };
 </script>
+
+<style scoped>
+.bodyContainer{
+  height: 576px;
+  width: 100%;
+  justify-content: center;
+}
+.profileImg{
+  height: 120px;
+  width: 120px;
+}
+</style>
