@@ -1,0 +1,56 @@
+{
+  "providers": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-bentodo-dev-130827-authRole",
+      "UnauthRoleArn": "arn:aws:iam::724579672105:role/amplify-bentodo-dev-130827-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::724579672105:role/amplify-bentodo-dev-130827-authRole",
+      "Region": "ap-northeast-1",
+      "DeploymentBucketName": "amplify-bentodo-dev-130827-deployment",
+      "UnauthRoleName": "amplify-bentodo-dev-130827-unauthRole",
+      "StackName": "amplify-bentodo-dev-130827",
+      "StackId": "arn:aws:cloudformation:ap-northeast-1:724579672105:stack/amplify-bentodo-dev-130827/6dcd87d0-105a-11ec-bc2f-0ac782ba9d53",
+      "AmplifyAppId": "d3fk2ifpejawp4"
+    }
+  },
+  "api": {},
+  "auth": {
+    "bentodo4e41db73": {
+      "service": "Cognito",
+      "providerPlugin": "awscloudformation",
+      "dependsOn": [],
+      "customAuth": false,
+      "frontendAuthConfig": {
+        "loginMechanisms": [
+          "EMAIL"
+        ],
+        "signupAttributes": [
+          "EMAIL"
+        ],
+        "passwordProtectionSettings": {
+          "passwordPolicyMinLength": 8,
+          "passwordPolicyCharacters": []
+        },
+        "mfaConfiguration": "OFF",
+        "mfaTypes": [
+          "SMS"
+        ]
+      },
+      "providerMetadata": {
+        "s3TemplateURL": "https://s3.amazonaws.com/amplify-bentodo-dev-130827-deployment/amplify-cfn-templates/auth/bentodo4e41db73-cloudformation-template.yml",
+        "logicalId": "authbentodo4e41db73"
+      },
+      "lastPushTimeStamp": "2021-09-16T12:51:19.492Z",
+      "output": {
+        "UserPoolId": "ap-northeast-1_Mq0JTHwqS",
+        "AppClientIDWeb": "3kq01l5df2s54maaifl7s0151",
+        "AppClientID": "6ssaiuj1bp82vcvld84cspen9",
+        "IdentityPoolId": "ap-northeast-1:18959b61-c945-49f2-aed1-412a454832b7",
+        "UserPoolArn": "arn:aws:cognito-idp:ap-northeast-1:724579672105:userpool/ap-northeast-1_Mq0JTHwqS",
+        "IdentityPoolName": "bentodo4e41db73_identitypool_4e41db73__dev",
+        "UserPoolName": "bentodo4e41db73_userpool_4e41db73"
+      },
+      "lastPushDirHash": "ch9XLIE0k4/59l6F2kYrcKnAXRI="
+    }
+  },
+  "function": {}
+}
